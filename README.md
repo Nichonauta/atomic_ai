@@ -50,34 +50,35 @@ run.py          Arranca el servidor con uvicorn
 - Python 3.9+
 - Un endpoint upstream compatible con la API de chat completions de OpenAI (por defecto, DeepSeek)
 
-## Configuración
+## Descarga
 
-Copia `.env.example` a `.env` y completa tus valores:
+Desde una terminal, ubicado en la ruta donde quieras tener el proyecto:
+
+```bash
+git clone https://github.com/Nichonauta/atomic_ai.git
+cd atomic_ai
+```
+
+## Instalación y ejecución
+
+Crea un entorno virtual e instala las dependencias:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate      # Windows
+# source .venv/bin/activate   # Linux / macOS
+pip install -r requirements.txt
+```
+
+Copia `.env.example` a `.env` y completa tus valores (variables detalladas en [Configuración](#configuración)):
 
 ```bash
 cp .env.example .env
 ```
 
-Variables principales:
-
-| Variable | Descripción | Default |
-|---|---|---|
-| `UPSTREAM_BASE_URL` | URL base del modelo upstream | `https://api.deepseek.com` |
-| `UPSTREAM_API_KEY` | API key del upstream | *(vacío)* |
-| `UPSTREAM_MODEL` | Modelo a usar si el request no especifica uno | `deepseek-v4-flash` |
-| `MAX_DECOMPOSITION_DEPTH` | Profundidad máxima del árbol de subtareas | `3` |
-| `MAX_TOOL_ROUNDS_PER_PHASE` | Límite de rondas de `tool_calls` por fase | `25` |
-| `PROXY_HOST` / `PROXY_PORT` | Dirección donde escucha el proxy | `127.0.0.1:8000` |
-| `SESSION_TTL_SECONDS` | Tiempo de vida de una sesión pausada | `1800` |
-| `MAX_SESSIONS` | Máximo de sesiones en memoria | `200` |
-| `EXPOSE_REASONING_CONTENT` | Si se expone el proceso interno como `reasoning_content` | `true` |
-
-## Instalación y ejecución
+Arranca el servidor:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate      # Windows
-pip install -r requirements.txt
 python run.py
 ```
 
@@ -90,6 +91,22 @@ El proxy queda disponible en `http://127.0.0.1:8000` (o el host/puerto configura
 - `GET /healthz` — healthcheck
 
 Apunta cualquier cliente compatible con la API de OpenAI (SDK oficial, agentes de código, etc.) a esta URL como `base_url`.
+
+## Configuración
+
+Variables de entorno disponibles en `.env`:
+
+| Variable | Descripción | Default |
+|---|---|---|
+| `UPSTREAM_BASE_URL` | URL base del modelo upstream | `https://api.deepseek.com` |
+| `UPSTREAM_API_KEY` | API key del upstream | *(vacío)* |
+| `UPSTREAM_MODEL` | Modelo a usar si el request no especifica uno | `deepseek-v4-flash` |
+| `MAX_DECOMPOSITION_DEPTH` | Profundidad máxima del árbol de subtareas | `3` |
+| `MAX_TOOL_ROUNDS_PER_PHASE` | Límite de rondas de `tool_calls` por fase | `25` |
+| `PROXY_HOST` / `PROXY_PORT` | Dirección donde escucha el proxy | `127.0.0.1:8000` |
+| `SESSION_TTL_SECONDS` | Tiempo de vida de una sesión pausada | `1800` |
+| `MAX_SESSIONS` | Máximo de sesiones en memoria | `200` |
+| `EXPOSE_REASONING_CONTENT` | Si se expone el proceso interno como `reasoning_content` | `true` |
 
 ## Tests
 
