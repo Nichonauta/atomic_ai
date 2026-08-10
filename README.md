@@ -6,13 +6,15 @@ La idea: modelos más pequeños o más baratos suelen fallar en tareas compuesta
 
 ## Video
 
-**1. Teoría** — cómo funciona el proceso de descomposición atómica, sin mostrar aún el script:
+<p align="center">
+<b>1. Teoría</b> — cómo funciona el proceso de descomposición atómica, sin mostrar aún el script:<br><br>
+<a href="https://www.youtube.com/watch?v=ruscNB4dLL4"><img src="https://img.youtube.com/vi/ruscNB4dLL4/hqdefault.jpg" alt="Teoría de la descomposición atómica"></a>
+</p>
 
-[![Teoría de la descomposición atómica](https://img.youtube.com/vi/ruscNB4dLL4/hqdefault.jpg)](https://www.youtube.com/watch?v=ruscNB4dLL4)
-
-**2. Demo** — el script en acción, probado en vivo:
-
-[![Demo del script funcionando](https://img.youtube.com/vi/OdK6iUHGamo/hqdefault.jpg)](https://www.youtube.com/watch?v=OdK6iUHGamo)
+<p align="center">
+<b>2. Demo</b> — el script en acción, probado en vivo:<br><br>
+<a href="https://www.youtube.com/watch?v=OdK6iUHGamo"><img src="https://img.youtube.com/vi/OdK6iUHGamo/hqdefault.jpg" alt="Demo del script funcionando"></a>
+</p>
 
 ## Cómo funciona
 
