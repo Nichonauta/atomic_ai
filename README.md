@@ -4,6 +4,16 @@ Proxy HTTP compatible con la API de OpenAI (`/v1/chat/completions`) que se coloc
 
 La idea: modelos más pequeños o más baratos suelen fallar en tareas compuestas porque intentan resolverlo todo de un tirón. Este proxy fuerza un proceso de tres fases —planificar, ejecutar, sintetizar— para que cada paso sea lo bastante simple como para resolverse bien, manteniendo compatibilidad total con clientes que ya hablan el protocolo de OpenAI (incluye streaming SSE, `tool_calls`, contenido multimodal y `reasoning_content`).
 
+## Video
+
+**1. Teoría** — cómo funciona el proceso de descomposición atómica, sin mostrar aún el script:
+
+[![Teoría de la descomposición atómica](https://img.youtube.com/vi/ruscNB4dLL4/hqdefault.jpg)](https://www.youtube.com/watch?v=ruscNB4dLL4)
+
+**2. Demo** — el script en acción, probado en vivo:
+
+[![Demo del script funcionando](https://img.youtube.com/vi/OdK6iUHGamo/hqdefault.jpg)](https://www.youtube.com/watch?v=OdK6iUHGamo)
+
 ## Cómo funciona
 
 Cada turno del usuario pasa por tres fases, orquestadas por `AtomicDecompositionEngine` ([app/engine.py](app/engine.py)):
